@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>English Pocket</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <h1>English Pocket</h1>
+    <div class="small" id="progressText">0 / 0</div>
+  </header>
+
+  <main class="card" id="card">
+    <div class="tag" id="tag">Word</div>
+
+    <div class="word" id="word">opportunity</div>
+    <button class="ghost" id="showBtn">Show translation</button>
+
+    <div class="translation hidden" id="translation">
+      <div class="tr" id="tr">возможность</div>
+      <div class="ex" id="ex">I have an opportunity to learn programming.</div>
+    </div>
+
+    <div class="actions">
+      <button class="bad" id="noBtn">I don't know</button>
+      <button class="good" id="yesBtn">I know</button>
+    </div>
+  </main>
+
+  <footer class="bottom">
+    <button class="ghost" id="resetBtn">Reset progress</button>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
