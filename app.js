@@ -20,15 +20,18 @@ let cardIndex = 0;
 const tabAdd = document.getElementById("tabAdd");
 const tabCards = document.getElementById("tabCards");
 const tabList = document.getElementById("tabList");
+const tabGame = document.getElementById("tabGame");
 
 const screenAdd = document.getElementById("screenAdd");
 const screenCards = document.getElementById("screenCards");
 const screenList = document.getElementById("screenList");
+const screenGame = document.getElementById("screenGame");
 
 function setActiveTab(which) {
   // reset
-  [tabAdd, tabCards, tabList].forEach(t => t.classList.remove("active"));
-  [screenAdd, screenCards, screenList].forEach(s => s.classList.add("hidden"));
+  [tabAdd, tabCards, tabList, tabGame].forEach(t => t.classList.remove("active"));
+  [screenAdd, screenCards, screenList, screenGame
+  ].forEach(s => s.classList.add("hidden"));
 
   if (which === "add") {
     tabAdd.classList.add("active");
@@ -37,16 +40,21 @@ function setActiveTab(which) {
     tabCards.classList.add("active");
     screenCards.classList.remove("hidden");
     renderCard();
-  } else {
+  } else if (which === "list") {
     tabList.classList.add("active");
     screenList.classList.remove("hidden");
     renderList();
+  } else if (which === "game") {
+    tabGame.classList.add("active");
+    screenGame.classList.remove("hidden");
   }
+
 }
 
 tabAdd.addEventListener("click", () => setActiveTab("add"));
 tabCards.addEventListener("click", () => setActiveTab("cards"));
 tabList.addEventListener("click", () => setActiveTab("list"));
+tabGame.addEventListener("click", () => setActiveTab("game"));
 
 
 const enInput = document.getElementById("enInput");
