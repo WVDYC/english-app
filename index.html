@@ -3,35 +3,74 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>English Pocket</title>
+  <title>My Words</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="top">
-    <h1>English Pocket</h1>
-    <div class="small" id="progressText">0 / 0</div>
+    <div class="title">My Words</div>
+
+    <div class="tabs">
+      <button class="tab active" id="tabAdd">Add</button>
+      <button class="tab" id="tabCards">Cards</button>
+      <button class="tab" id="tabList">List</button>
+    </div>
   </header>
 
-  <main class="card" id="card">
-    <div class="tag" id="tag">Word</div>
+  <!-- ADD -->
+  <main class="screen" id="screenAdd">
+    <div class="card">
+      <div class="label">English word</div>
+      <input id="enInput" type="text" placeholder="bread" autocomplete="off" />
 
-    <div class="word" id="word">opportunity</div>
-    <button class="ghost" id="showBtn">Show translation</button>
+      <div class="label">Translation</div>
+      <input id="ruInput" type="text" placeholder="хлеб" autocomplete="off" />
 
-    <div class="translation hidden" id="translation">
-      <div class="tr" id="tr">возможность</div>
-      <div class="ex" id="ex">I have an opportunity to learn programming.</div>
-    </div>
+      <div class="label">Example (optional)</div>
+      <input id="exInput" type="text" placeholder="I eat bread every day." autocomplete="off" />
 
-    <div class="actions">
-      <button class="bad" id="noBtn">I don't know</button>
-      <button class="good" id="yesBtn">I know</button>
+      <button class="btn primary" id="addBtn">Add word</button>
+      <button class="btn ghost" id="clearAllBtn">Clear all words</button>
+
+      <div class="hint" id="hint"></div>
     </div>
   </main>
 
-  <footer class="bottom">
-    <button class="ghost" id="resetBtn">Reset progress</button>
-  </footer>
+  <!-- CARDS -->
+  <main class="screen hidden" id="screenCards">
+    <div class="card">
+      <div class="row">
+        <div class="badge" id="cardCounter">0 / 0</div>
+        <button class="mini ghost" id="shuffleBtn">Shuffle</button>
+      </div>
+
+      <div class="word" id="cardEn">—</div>
+
+      <button class="btn ghost" id="showBtn">Show translation</button>
+
+      <div class="translation hidden" id="trBox">
+        <div class="tr" id="cardRu">—</div>
+        <div class="ex" id="cardEx"></div>
+      </div>
+
+      <div class="nav">
+        <button class="btn" id="prevBtn">◀ Prev</button>
+        <button class="btn" id="nextBtn">Next ▶</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- LIST -->
+  <main class="screen hidden" id="screenList">
+    <div class="card">
+      <div class="row">
+        <input id="searchInput" class="search" type="text" placeholder="Search..." />
+        <div class="badge" id="countBadge">0</div>
+      </div>
+
+      <div class="list" id="listBox"></div>
+    </div>
+  </main>
 
   <script src="app.js"></script>
 </body>
