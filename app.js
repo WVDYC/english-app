@@ -93,7 +93,7 @@ addBtn.addEventListener("click", () => {
   exInput.value = "";
   showHint("Added ");
 
-  // чтобы карточки были готовы
+ 
   cardIndex = Math.max(0, words.length - 1);
 });
 
@@ -105,14 +105,14 @@ clearAllBtn.addEventListener("click", () => {
   showHint("Cleared ");
 });
 
-// Enter = Add
+
 [enInput, ruInput, exInput].forEach(inp => {
   inp.addEventListener("keydown", (e) => {
     if (e.key === "Enter") addBtn.click();
   });
 });
 
-// ===== CARDS screen =====
+
 const cardCounter = document.getElementById("cardCounter");
 const cardEn = document.getElementById("cardEn");
 const cardRu = document.getElementById("cardRu");
@@ -252,5 +252,5 @@ function escapeHtml(s) {
     .replaceAll("'", "&#039;");
 }
 
-// ===== Start =====
+
 setActiveTab("add");
